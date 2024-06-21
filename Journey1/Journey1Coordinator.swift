@@ -9,21 +9,21 @@ import Foundation
 import UIKit
 import Core
 
-protocol Journey1CoordinatorDelegate: AnyObject {
+public protocol Journey1CoordinatorDelegate: AnyObject {
     func navigateToJourney4()
 }
 
-class Journey1Coordinator: CoordinatorProtocol {
+public class Journey1Coordinator: CoordinatorProtocol {
     
-    weak var delegate: (any Journey1CoordinatorDelegate)?
-    weak var finishDelegate: (any CoordinatorFinishDelegate)?
-    var navigationController: UINavigationController
-    var childCoordinators: [any CoordinatorProtocol] = []
-    var childControllers: [UIViewController] = []
-    var parentCoordinator: (any CoordinatorProtocol)?
-    var type: CoordinatorType = .journey1
+    public weak var delegate: (any Journey1CoordinatorDelegate)?
+    public weak var finishDelegate: (any CoordinatorFinishDelegate)?
+    public var navigationController: UINavigationController
+    public var childCoordinators: [any CoordinatorProtocol] = []
+    public var childControllers: [UIViewController] = []
+    public var parentCoordinator: (any CoordinatorProtocol)?
+    public var type: CoordinatorType = .journey1
     
-    required init(_ navigationController: UINavigationController) {
+    public required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
@@ -31,7 +31,7 @@ class Journey1Coordinator: CoordinatorProtocol {
         print("\(Journey1Coordinator.self) deinit")
     }
     
-    func start() {
+    public func start() {
         let viewModel = HomeViewModel()
         viewModel.delegate = self
         let viewController = HomeViewController(viewModel: viewModel)
