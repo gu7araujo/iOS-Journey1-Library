@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "Journey1"
-  spec.version      = "0.0.2"
+  spec.version      = "1.0.0"
   spec.summary      = "Journey library"
   spec.description  = <<-DESC
   A journey and their features.

@@ -15,6 +15,10 @@ class HomeViewModel {
     
     weak var delegate: HomeViewModelDelegate?
     
+    deinit {
+        print("\(Swift.type(of: self)) deinit")
+    }
+    
     func navigateToJourney4() {
         delegate?.navigateToJourney4()
     }

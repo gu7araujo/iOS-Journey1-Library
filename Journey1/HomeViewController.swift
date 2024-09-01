@@ -63,6 +63,10 @@ class HomeViewController: UIViewController {
         button.addTarget(self, action: #selector(navigateToNextScreen), for: .touchUpInside)
         return button
     }()
+    
+    deinit {
+        print("\(Swift.type(of: self)) deinit")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

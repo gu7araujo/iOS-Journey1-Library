@@ -19,7 +19,6 @@ public class Journey1Coordinator: CoordinatorProtocol {
     public weak var finishDelegate: (any CoordinatorFinishDelegate)?
     public var navigationController: UINavigationController
     public var childCoordinators: [any CoordinatorProtocol] = []
-    public var childControllers: [UIViewController] = []
     public var parentCoordinator: (any CoordinatorProtocol)?
     public var type: CoordinatorType = .journey1
     
@@ -28,7 +27,7 @@ public class Journey1Coordinator: CoordinatorProtocol {
     }
     
     deinit {
-        print("\(Journey1Coordinator.self) deinit")
+        print("\(Swift.type(of: self)) deinit")
     }
     
     public func start() {
@@ -36,7 +35,6 @@ public class Journey1Coordinator: CoordinatorProtocol {
         viewModel.delegate = self
         let viewController = HomeViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: true)
-        childControllers.append(viewController)
     }
 }
 
@@ -45,4 +43,3 @@ extension Journey1Coordinator: HomeViewModelDelegate {
         delegate?.navigateToJourney4()
     }
 }
-
